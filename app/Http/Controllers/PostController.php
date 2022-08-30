@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +37,9 @@ class PostController extends Controller
     public function getAllPosts() {
 
         $posts = Post::all();
+        foreach ($posts as $post) {
+            $post->user = $post->user;
+        }
 
         return view('post.get.all', ['posts' => $posts]);
 
