@@ -6,10 +6,20 @@
 
     [id^="post-"] {
 
+        position: relative;
         padding: 2rem;
         border-radius: 1rem;
         background-color: $color-secondary-2;
         color: $text-primary;
+
+
+        .post-creator {
+
+            position: absolute;
+            top: 5px;
+            left: 15px;
+
+        }
 
     }
 
