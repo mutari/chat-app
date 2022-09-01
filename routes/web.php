@@ -65,6 +65,9 @@ Route::group(['middleware' => ['auth']], function () {
 
             Route::get('/all', 'getAllPosts')->name('getAllPosts');
 
+            Route::get('/get/comments/{post_id}', 'getComments');
+            Route::post('/new/comment', 'newComment');
+
         });
 
     });

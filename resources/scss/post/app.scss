@@ -21,6 +21,55 @@
 
         }
 
+        .post-actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            a {
+                cursor: pointer;
+            }
+
+        }
+
+        .post-comment-section {
+            margin-top: 1rem;
+
+            .post-comment-input {
+
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 3rem;
+
+            }
+
+            .post-comments {
+
+                [id^="comment-"] {
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .comment-text {
+
+                    }
+
+                    .comment-user {
+                        display: flex;
+                        justify-content: flex-end;
+                    }
+
+                    &:last-child hr {
+                        display: none;
+                    }
+
+                }
+
+            }
+
+        }
+
     }
 
 }
