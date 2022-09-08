@@ -7,6 +7,12 @@
     @auth
         <div class="w-100 flex-column text-center">
             <div id="apps" class="m-5">
+                <a class="app" href="http://test.mutariproject.com/index.php" >
+                    <div class="btn btn-outline-secondary app-icon">
+                        <i class="bi bi-map"></i>
+                    </div>
+                    <span class="app-title">Map</span>
+                </a>
                 <a class="app" href="/post" >
                     <div class="btn btn-outline-secondary app-icon">
                         <i class="bi bi-sticky"></i>
