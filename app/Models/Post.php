@@ -18,7 +18,7 @@ class Post extends Model {
     public function getPosts() {
         return DB::table('posts')
             ->join('users', 'posts.user_id', '=', 'users.id')
-            ->join('comments', 'posts.id', '=', 'comments.post_id')
+            ->leftJoin('comments', 'posts.id', '=', 'comments.post_id')
             ->select(DB::raw('count(comments.id) as numberOfComments, posts.*, users.username'))
             ->groupBy('posts.id')
             ->get();
