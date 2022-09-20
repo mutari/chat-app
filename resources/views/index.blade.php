@@ -25,6 +25,12 @@
                     </div>
                     <span class="app-title">chat</span>
                 </a>
+                <a class="app" href="/drinking" >
+                    <div class="btn btn-outline-secondary app-icon">
+                        <i class="bi bi-cup-straw"></i>
+                    </div>
+                    <span class="app-title">drinking</span>
+                </a>
             </div>
         </div>
     @endauth

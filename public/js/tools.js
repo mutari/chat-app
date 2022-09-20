@@ -8,6 +8,9 @@ window.fetch = (url, settings = {}) => {
     return oldFetch(url, settings);
 }
 
+
+
+// region good to have function
 function generateFormData(obj, formData = new FormData()){
 
     this.formData = formData;
@@ -44,3 +47,12 @@ function hide(...element) {
         })
     else element.classList.add('d-none')
 }
+
+function onReady(__callback) {
+
+    document.addEventListener("DOMContentLoaded", function() {
+        __callback();
+    });
+
+}
+// endregion

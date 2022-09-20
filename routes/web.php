@@ -71,4 +71,18 @@ Route::group(['middleware' => ['auth']], function () {
         });
 
     });
+
+    Route::prefix('drinking')->group(function () {
+
+        Route::controller(\App\Http\Controllers\DrinkingGame::class)->group(function () {
+
+            Route::get('/', 'index');
+            Route::get('/feeem', 'feeemMenu');
+
+
+            Route::post('/create/game', 'createGame');
+
+        });
+
+    });
 });

@@ -102,10 +102,35 @@ async function publishComment(element, postId) {
 
 }
 
-function onReady(__callback) {
 
-    document.addEventListener("DOMContentLoaded", function() {
-        __callback();
-    });
+
+
+
+// region drinking
+
+async function createNewLobby() {
+
+    try {
+
+        let lobbyNameInput = document.querySelector('#lobbyName');
+
+        if(!lobbyNameInput.value) return;
+
+        let response = await fetch('/drinking/create/game', {
+            method: 'POST',
+            body: generateFormData({'lobbyName': lobbyNameInput.value})
+        })
+
+        if(!response.ok) return response;
+
+        response = await response.json();
+
+        console.log(response)
+
+    } catch (error) {
+        console.error(error)
+    }
 
 }
+
+// endregion
