@@ -18,26 +18,24 @@
         <nav class="navbar navbar-expand-lg position-fixed" style="left: 0; right: 0;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">MutariProject.com</a>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="nav-item me-auto"></div>
-                    @isset (Auth()->user()->username)
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ Auth()->user()->username }}
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
-                                <li><a class="dropdown-item d-flex justify-content-between" href="/logout">Logout<i class="bi bi-door-closed"></i></a></li>
-                            </ul>
-                        </div>
-                    @endisset
-                    @empty (Auth()->user()->username)
-                        <div class="nav-item">
-                            <a class="btn" href="login">
-                                Login
-                            </a>
-                        </div>
-                    @endempty
-                </div>
+                <div class="nav-item me-auto"></div>
+                @isset (Auth()->user()->username)
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ Auth()->user()->username }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                            <li><a class="dropdown-item d-flex justify-content-between" href="/logout">Logout<i class="bi bi-door-closed"></i></a></li>
+                        </ul>
+                    </div>
+                @endisset
+                @empty (Auth()->user()->username)
+                    <div class="nav-item">
+                        <a class="btn" href="login">
+                            Login
+                        </a>
+                    </div>
+                @endempty
             </div>
         </nav>
         <div class="main-content">

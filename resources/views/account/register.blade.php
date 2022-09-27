@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="content w-50">
+    <div class="content">
         <form method="post" action="{{ route('register.perform') }}">
 
             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
