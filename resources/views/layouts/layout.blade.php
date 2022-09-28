@@ -39,7 +39,7 @@
             </div>
         </nav>
         <div class="main-content">
-            <main class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+            <main class="container min-vh-100">
                 @yield('content')
             </main>
         </div>
