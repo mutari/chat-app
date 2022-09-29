@@ -12,7 +12,7 @@ body, html {
     height: 100%;
 }
 
-.main-content {
+body {
 
     background-color: $color-secondary-1;
     width: 100%;
@@ -39,11 +39,37 @@ body, html {
 
 }
 
-nav.navbar {
+.color-secondary-1 {
+    color: $color-secondary-1;
 
-    * {
-        color: $color-secondary-3;
+    &:hover, &:focus {
+        color: $color-secondary-1;
+        filter: brightness(75%);
     }
+
+}
+
+.color-secondary-2 {
+    color: $color-secondary-2;
+
+    &:hover, &:focus {
+        color: $color-secondary-2;
+        filter: brightness(75%);
+    }
+
+}
+
+.color-secondary-3 {
+    color: $color-secondary-3;
+
+    &:hover, &:focus {
+        color: $color-secondary-3;
+        filter: brightness(75%);
+    }
+
+}
+
+nav {
 
 }
 

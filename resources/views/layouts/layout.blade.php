@@ -15,33 +15,29 @@
         <script src="/js/script.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg position-fixed" style="left: 0; right: 0;">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">MutariProject.com</a>
-                <div class="nav-item me-auto"></div>
-                @isset (Auth()->user()->username)
-                    <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ Auth()->user()->username }}
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
-                            <li><a class="dropdown-item d-flex justify-content-between" href="/logout">Logout<i class="bi bi-door-closed"></i></a></li>
-                        </ul>
-                    </div>
-                @endisset
-                @empty (Auth()->user()->username)
-                    <div class="nav-item">
-                        <a class="btn" href="login">
-                            Login
-                        </a>
-                    </div>
-                @endempty
-            </div>
+        <nav class="nav mx-3 my-1 my-md-3">
+            <a href="/" class="navbar-brand color-secondary-3">MutariProject.com</a>
+            <div class="nav-item me-auto"></div>
+            @isset (Auth()->user()->username)
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle color-secondary-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ Auth()->user()->username }}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                        <li><a class="dropdown-item d-flex justify-content-between" href="/logout">Logout<i class="bi bi-door-closed"></i></a></li>
+                    </ul>
+                </div>
+            @endisset
+            @empty (Auth()->user()->username)
+                <div class="nav-item">
+                    <a class="nav-link color-secondary-3" href="/login">
+                        Login
+                    </a>
+                </div>
+            @endempty
         </nav>
-        <div class="main-content">
-            <main class="container min-vh-100">
-                @yield('content')
-            </main>
+        <div class="container min-vh-100">
+            @yield('content')
         </div>
     </body>
 </html>

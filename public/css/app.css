@@ -4,26 +4,46 @@ body, html {
   height: 100%;
 }
 
-.main-content {
+body {
   background-color: #2e2e2e;
   width: 100%;
   min-height: 100%;
   margin: 0;
 }
-.main-content *:not(:is(input, label)) {
+body *:not(:is(input, label)) {
   color: #d9d9da;
 }
-.main-content *:is(input, label) {
+body *:is(input, label) {
   color: #212529;
 }
-.main-content .content {
+body .content {
   background-color: #47474c;
   padding: 2rem;
   border-radius: 1rem;
 }
 
-nav.navbar * {
+.color-secondary-1 {
+  color: #2e2e2e;
+}
+.color-secondary-1:hover, .color-secondary-1:focus {
+  color: #2e2e2e;
+  filter: brightness(75%);
+}
+
+.color-secondary-2 {
+  color: #47474c;
+}
+.color-secondary-2:hover, .color-secondary-2:focus {
+  color: #47474c;
+  filter: brightness(75%);
+}
+
+.color-secondary-3 {
   color: #a6a6a6;
+}
+.color-secondary-3:hover, .color-secondary-3:focus {
+  color: #a6a6a6;
+  filter: brightness(75%);
 }
 
 #apps {

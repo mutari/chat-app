@@ -1,12 +1,17 @@
 @extends('layouts.layout')
 
 @section('content')
-    @guest
-        <h1>Not logged in</h1>
-    @endguest
-    @auth
-        <div class="w-100 flex-column text-center">
-            <div id="apps" class="m-5">
+    <div class="w-100 flex-column text-center">
+        <div id="apps" class="m-5">
+            @guest
+                <a class="app" href="http://test.mutariproject.com/index.php" >
+                    <div class="btn btn-outline-secondary app-icon">
+                        <i class="bi bi-map"></i>
+                    </div>
+                    <span class="app-title">Map</span>
+                </a>
+            @endguest
+            @auth
                 <a class="app" href="http://test.mutariproject.com/index.php" >
                     <div class="btn btn-outline-secondary app-icon">
                         <i class="bi bi-map"></i>
@@ -31,7 +36,7 @@
                     </div>
                     <span class="app-title">drinking</span>
                 </a>
-            </div>
+            @endauth
         </div>
-    @endauth
+    </div>
 @endsection
