@@ -36,7 +36,13 @@
                     </div>
                     <span class="app-title">drinking</span>
                 </a>
-            @endauth
+                <a class="app" href="/links" >
+                    <div class="btn btn-outline-secondary app-icon">
+                        <i class="bi bi-link"></i>
+                    </div>
+                    <span class="app-title">links</span>
+                </a>
+            </div>
         </div>
-    </div>
+    @endauth
 @endsection

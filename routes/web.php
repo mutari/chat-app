@@ -77,9 +77,11 @@ Route::group(['middleware' => ['auth']], function () {
         Route::controller(\App\Http\Controllers\DrinkingGame::class)->group(function () {
 
             Route::get('/', 'index');
+
+            Route::get('/recipes', 'recipes');
+            Route::get('/recipe/{id}', 'recipe');
+
             Route::get('/feeem', 'feeemMenu');
-
-
             Route::post('/create/game', 'createGame');
 
         });
