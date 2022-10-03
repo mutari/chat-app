@@ -1,41 +1,20 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="vh-100">
-        <div class="row justify-content-center">
-            <div class="col-md-7 col-lg-5">
-                <div class="content">
-                    <form method="post" action="{{ route('register.perform') }}">
+    <form method="post" action="{{ route('register.perform') }}" class="max-w-lg mx-auto mt-24 md:mt-48">
+        <h1 class="mb-12 text-4xl text-center">Register</h1>
 
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
 
-                        <h3 class="mb-5 fw-normal text-center">Register</h3>
+        <x-input type="email" name="email" value="{{ old('email') }}" placeholder="name@example.com" required="required" autofocus>Email address</x-input>
 
-                        <div class="form-group form-floating mb-3">
-                            <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="name@example.com" required="required" autofocus>
-                            <label for="floatingEmail">Email address</label>
-                        </div>
+        <x-input type="text" name="username" value="{{ old('username') }}" placeholder="Username" required="required" autofocus>Username</x-input>
 
-                        <div class="form-group form-floating mb-3">
-                            <input type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Username" required="required" autofocus>
-                            <label for="floatingName">Username</label>
-                        </div>
+        <x-input type="password" name="password" value="{{ old('password') }}" placeholder="Password" required>Password</x-input>
 
-                        <div class="form-group form-floating mb-3">
-                            <input type="password" class="form-control" name="password" value="{{ old('password') }}" placeholder="Password" required="required">
-                            <label for="floatingPassword">Password</label>
-                        </div>
+        <x-input type="password" name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="Confirm Password" required>Confirm Password</x-input>
 
-                        <div class="form-group form-floating mb-3">
-                            <input type="password" class="form-control" name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="Confirm Password" required="required">
-                            <label for="floatingConfirmPassword">Confirm Password</label>
-                        </div>
+        <x-button type="submit">Create new account</x-button>
 
-                        <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
-
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+    </form>
 @endsection

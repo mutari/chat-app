@@ -40,7 +40,7 @@
                 </div>
             </div>
         </nav>
-        <div class="container mx-auto">
+        <div class="container mx-auto px-4">
             @yield('content')
         </div>
         <script src="https://unpkg.com/flowbite"></script>
