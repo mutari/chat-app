@@ -11,7 +11,7 @@
         <script src="/js/tools.js"></script>
         <script src="/js/script.js"></script>
     </head>
-    <body class="bg-slate-900 text-slate-50">
+    <body class="bg-slate-900 text-slate-50 h-screen">
         <nav class="bg-transparent border-gray-200 px-2 py-2.5 rounded">
             <div class="container flex flex-wrap justify-between items-center mx-auto">
                 <a href="/" class="text-slate-400 font-medium">MutariProject.com</a>
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </nav>
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4 h-full">
             @yield('content')
         </div>
         <script src="https://unpkg.com/flowbite"></script>
