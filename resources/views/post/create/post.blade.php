@@ -8,19 +8,12 @@
 
         <h1 class="h3 mb-3 fw-normal">Create post</h1>
 
-        <label for="title">Title</label>
-        <div class="form-group form-floating mb-3">
-            <input type="text" name="title" id="title" class="form-control">
-            <label for="floatingTitle">Title</label>
-        </div>
 
+        <x-input name="title" type="title" placeholder="Title" required>Title</x-input>
 
-        <div class="mb-3">
-            <label for="text">Text</label>
-            <textarea name="text" id="text" cols="30" rows="10" class="form-control"></textarea>
-        </div>
+        <x-textarea name="text" placeholder="Text" required>Text</x-textarea>
 
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Create</button>
+        <x-button type="submit">Create</x-button>
 
     </form>
 

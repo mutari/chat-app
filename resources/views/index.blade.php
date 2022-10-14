@@ -14,10 +14,10 @@
             @endguest
             @auth
                 <x-app icon="map" href="http://test.mutariproject.com/index.php">Map</x-app>
-                <x-app icon="bord" href="/post">posts</x-app>
-                <x-app icon="chatBubble" href="/chat">chat</x-app>
-                <x-app icon="glass" href="/drinking">drinking</x-app>
-                <x-app icon="link" href="/links">links</x-app>
+                <x-app icon="bord" href="/post">Posts</x-app>
+                <x-app icon="chatBubble" href="/chat">Chat</x-app>
+                <x-app icon="glass" href="/drinking">Drinking</x-app>
+                <x-app icon="link" href="/links">Links</x-app>
             </div>
         </div>
     @endauth
