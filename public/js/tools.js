@@ -35,17 +35,17 @@ function generateFormData(obj, formData = new FormData()){
 function show(...element) {
     if(element instanceof Array)
         element.forEach(el => {
-            el.classList.remove('d-none')
+            el.classList.remove('hidden')
         })
-    else element.classList.remove('d-none')
+    else element.classList.remove('hidden')
 }
 
 function hide(...element) {
     if(element instanceof Array)
         element.forEach(el => {
-            el.classList.add('d-none')
+            el.classList.add('hidden')
         })
-    else element.classList.add('d-none')
+    else element.classList.add('hidden')
 }
 
 function onReady(__callback) {
