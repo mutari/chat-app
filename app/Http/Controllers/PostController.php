@@ -40,7 +40,11 @@ class PostController extends Controller
 
         $posts = (new Post())->getPosts();
 
-        return view('post.get.all', ['posts' => $posts]);
+        return response()
+            ->json([
+                'html' => view('post.get.all', ['posts' => $posts])->render()
+            ])
+            ->setStatusCode(200);
 
     }
 

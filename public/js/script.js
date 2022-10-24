@@ -1,3 +1,25 @@
+/**
+ * fetch html from
+ *
+ * @param path
+ * @returns {Promise<string|boolean>}
+ */
+async function fetchHtml(path) {
+    try {
+        let response = await fetch(path);
+
+        if(!response.ok) throw response;
+        if(response.status !== 200) throw response;
+
+        let data = await response.json();
+
+        return data.html;
+    } catch(error) {
+        console.error(error);
+    }
+}
+
+
 async function createPost() {
 
     try {
@@ -19,25 +41,7 @@ async function createPost() {
 
 }
 
-async function getPosts() {
-
-    try {
-        //get all posts
-        let response = await fetch('/post/all');
-
-        if(!response.ok) throw response;
-
-        let html = await response.text();
-
-        document.querySelector('#posts').innerHTML = html;
-    } catch (error) {
-        console.error(error)
-    }
-
-}
-
 async function getComments(postId) {
-
     let post = document.querySelector(`#post-${postId}`);
 
     if(post.querySelector('.bi-caret-up')) {
@@ -60,7 +64,8 @@ async function getComments(postId) {
         let commentInput = post.querySelector(`.post-comment-input`);
         show(commentSection, commentInput)
 
-        post.querySelector('.bi-caret-down').classList.replace('bi-caret-down', 'bi-caret-up');
+        post.querySelector('.chevron-up').classList.toggle('hidden');
+        post.querySelector('.chevron-down').classList.toggle('hidden');
 
     } catch (error) {
         console.error(error)

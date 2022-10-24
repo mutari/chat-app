@@ -10,15 +10,21 @@
                 </x-button>
             </div>
         </div>
-        <div class="">
+        <div class="grow">
             <div id="posts" class="flex flex-col gap-4"></div>
         </div>
     </div>
 
     <script>
-        onReady(() => {
+        onReady(async () => {
 
-            getPosts();
+            document.querySelector('#posts').innerHTML = await fetchHtml('/post/all');
+
+            document.querySelectorAll('[id^="post-"] .post-load-comments').forEach(element => {
+                element.addEventListener('click', event => {
+                    getComments(element.closest('[id^="post-"]').dataset.post);
+                })
+            })
 
         });
     </script>
