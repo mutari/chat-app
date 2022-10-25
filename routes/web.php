@@ -53,6 +53,16 @@ Route::group(['middleware' => ['auth']], function () {
         });
 
     });
+    
+    Route::prefix('test')->group(function() {
+        
+        Route::controller(\App\Http\Controllers\TestController::class)->group(function() {
+            
+            Route::get('/', 'index');
+            
+        });
+        
+    });
 
     Route::prefix('post')->group(function () {
 

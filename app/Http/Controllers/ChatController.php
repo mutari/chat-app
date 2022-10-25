@@ -14,27 +14,7 @@ class ChatController extends Controller {
     public function index() {
         $user = Auth::user();
         
-        $data = \Notion::database('f09d487bdb94409f8b35028594dc9802')->limit(5)->query()->asCollection();
-
-        $out = [];
-        
-        foreach ($data as $page) {
-            
-            
-            //$out[] = $page->getPropertyKeys();
-            
-            $out[] = $page->getProperty('Link')->getRawContent();
-            
-            //$out[] = $page->getProperties();
-            
-            
-            /*$out[$page->id] = [
-                'link' => $page->rawProperties->Link->url
-            ];*/
-            
-        }
-        
-        return view('chat.chat', ['name' => $user->username, 'data' => json_encode($out)]);
+        return view('chat.chat', ['name' => $user->username]);
     }
 
 }
