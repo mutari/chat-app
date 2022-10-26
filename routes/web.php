@@ -49,6 +49,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::controller(\App\Http\Controllers\ChatController::class)->group(function () {
 
             Route::get('/', 'index');
+            
+            Route::get('/get-users', 'getUsers');
 
         });
 

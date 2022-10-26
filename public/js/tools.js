@@ -8,6 +8,27 @@ window.fetch = (url, settings = {}) => {
     return oldFetch(url, settings);
 }
 
+/**
+ * fetch html from
+ *
+ * @param path
+ * @returns {Promise<string|boolean>}
+ */
+async function fetchHtml(path) {
+    try {
+        let response = await fetch(path);
+
+        if(!response.ok) throw response;
+        if(response.status !== 200) throw response;
+
+        let data = await response.json();
+
+        return data.html;
+    } catch(error) {
+        console.error(error);
+    }
+}
+
 
 
 // region good to have function

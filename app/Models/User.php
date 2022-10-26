@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -56,5 +58,17 @@ class User extends Authenticatable
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class, 'user_id');
+    }
+    
+    public function getUsers($removeAuthenticatedUser = false) {
+        if(!$removeAuthenticatedUser)
+            return DB::table('users')
+                ->get();
+        else {
+            $user = Auth::User();
+            return DB::table('users')
+                ->where('id', "!=", $user->id)
+                ->get();
+        }
     }
 }
