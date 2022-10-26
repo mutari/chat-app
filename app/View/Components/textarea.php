@@ -27,6 +27,6 @@ class textarea extends Component
      */
     public function render()
     {
-        return view('components.textarea');
+        return view('Components.textarea');
     }
 }
