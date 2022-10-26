@@ -28,6 +28,6 @@ class input extends Component
      */
     public function render()
     {
-        return view('Components.input');
+        return view('components.input');
     }
 }

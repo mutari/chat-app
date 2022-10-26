@@ -28,6 +28,6 @@ class app extends Component
      */
     public function render()
     {
-        return view('Components.app');
+        return view('components.app');
     }
 }

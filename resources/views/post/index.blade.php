@@ -5,7 +5,7 @@
         <div class="shrink-0 w-48 p-2">
             <div class="flex flex-col justify-start">
                 <x-button type="link" href="{!! route('createPost') !!}">
-                    @includeIf('Components.icons.outline.bord')
+                    @includeIf('components.icons.outline.bord')
                     Add Post
                 </x-button>
             </div>

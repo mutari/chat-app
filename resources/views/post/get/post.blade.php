@@ -14,10 +14,10 @@
         <a class="post-load-comments flex flex-row items-center cursor-pointer">
             <span>{{ $post->numberOfComments }}</span>
             <span class="chevron-up hidden">
-                @includeIf("Components.icons.mini.chevronUp")
+                @includeIf("components.icons.mini.chevronUp")
             </span>
             <span class="chevron-down">
-                @includeIf("Components.icons.mini.chevronDown")
+                @includeIf("components.icons.mini.chevronDown")
             </span>
         </a>
     </div>
