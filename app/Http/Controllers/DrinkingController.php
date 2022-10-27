@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use http\Env\Response;
 use Illuminate\Http\Request;
-use Ramsey\Uuid\Type\Integer;
 
-class DrinkingGame extends Controller {
+class DrinkingController extends Controller {
 
     public function index() {
         return view('drinking.index');
@@ -36,6 +34,10 @@ class DrinkingGame extends Controller {
         }
 
         return view('drinking.recipe.recipe', ['drink' => $drinkData]);
+    }
+    
+    public function shotsHour() {
+        return view('drinking.shotsHour.index');
     }
 
 
