@@ -33,7 +33,17 @@ Route::group(['middleware' => ['guest']], function() {
         Route::get('/login', 'show')->name('login');
         Route::post('/login', 'login')->name('login.perform');
     });
+    
+});
 
+Route::prefix('test')->group(function() {
+    
+    Route::controller(\App\Http\Controllers\TestController::class)->group(function() {
+        
+        Route::get('/', 'index');
+        
+    });
+    
 });
 
 Route::group(['middleware' => ['auth']], function () {
@@ -54,16 +64,6 @@ Route::group(['middleware' => ['auth']], function () {
 
         });
 
-    });
-    
-    Route::prefix('test')->group(function() {
-        
-        Route::controller(\App\Http\Controllers\TestController::class)->group(function() {
-            
-            Route::get('/', 'index');
-            
-        });
-        
     });
 
     Route::prefix('post')->group(function () {

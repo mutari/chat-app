@@ -6,6 +6,7 @@
         <div id="apps" class="flex flex-row">
             @guest
                 <x-app icon="map" href="http://test.mutariproject.com/index.php">Map</x-app>
+                <x-app icon="exclamationTriangle" href="/test">Experiments</x-app>
             @endguest
             @auth
                 <x-app icon="map" href="http://test.mutariproject.com/index.php">Map</x-app>
