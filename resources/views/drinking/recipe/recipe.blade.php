@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <div class="row">
-        <div class="col-8">
+    <div class="flex flex-row">
+        <div class="grow">
             <h1>{{ $drink['name'] }}</h1>
             <div>
                 @foreach ($drink['ingredients'] as $ingredient)
@@ -20,7 +20,7 @@
                 @endforeach
             </div>
         </div>
-        <div class="col-4">
+        <div class="w-48">
             <div>
                 <img src="{{ $drink['image'] }}" alt="{{ $drink['name'] }}">
             </div>
