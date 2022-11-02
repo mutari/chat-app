@@ -1,5 +1,7 @@
 @props([
-    'noMargin' => false
+    'noMargin' => false,
+    'name' => '',
+    'id' => null
 ])
 
 <div class="{{ !$noMargin ? 'mb-6' : '' }}">
