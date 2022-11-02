@@ -1,3 +1,7 @@
+@props([
+    '$noMargin' => false
+])
+
 <div class="{{ !$noMargin ? 'mb-6' : '' }}">
     <input name="{{ $name }}" id="{{ $id ?? $name }}"
             {{ $attributes->merge(["class" => "
