@@ -1,5 +1,5 @@
 @props([
-    '$noMargin' => false
+    'noMargin' => false
 ])
 
 <div class="{{ !$noMargin ? 'mb-6' : '' }}">
