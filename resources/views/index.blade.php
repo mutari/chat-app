@@ -13,7 +13,7 @@
                 <x-app icon="bord" href="/post">Posts</x-app>
                 <x-app icon="chatBubble" href="/chat">Chat</x-app>
                 <x-app icon="glass" href="/drinking">Drinking</x-app>
-                <x-app icon="link" href="/links">Links</x-app>
+                <x-app icon="link" href="/test/links">Links</x-app>
                 <x-app icon="exclamationTriangle" href="/test">Experiments</x-app>
             @endauth
         </div>

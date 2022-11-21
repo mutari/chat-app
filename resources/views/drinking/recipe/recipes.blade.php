@@ -3,22 +3,24 @@
 @section('content')
 
     <div>
-        <h1>Recipes</h1>
+
     </div>
 
-    <div class="row">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
         @foreach ($drinks as $drink)
 
-            <div class="col-6">
-                <a class="card mb-3" href="/drinking/recipe/{{ $drink['id'] }}">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="{{ $drink['image'] }}" alt="{{ $drink['name'] }}" class="img-fluid rounded-start" loading="lazy" height="200" width="200">
+            <div class="border border-slate-500 rounded hover:scale-110 bg-slate-900">
+                <a class="" href="/drinking/recipe/{{ $drink['id'] }}">
+                    <div class="flex flex-row">
+                        <div class="shrink-0 w-48">
+                            <img src="{{ $drink['image'] }}" alt="{{ $drink['name'] }}" class="rounded" loading="lazy" height="200" width="200">
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $drink['name'] }}</h5>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <div class="grow">
+                            <div class="h-full p-2">
+                                <div class="relative h-full">
+                                    <h5 class="">{{ $drink['name'] }}</h5>
+                                    <p class="absolute bottom-0 right-0"><small class="text-muted">3 min</small></p>
+                                </div>
                             </div>
                         </div>
                     </div>

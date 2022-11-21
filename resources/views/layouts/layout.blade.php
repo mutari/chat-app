@@ -29,6 +29,7 @@
                         <!-- Dropdown menu -->
                         <div id="dropdown" class="hidden z-10 w-44 rounded divide-y divide-gray-100 shadow bg-slate-700">
                             <div>
+                                <a href="/config/user-integration" class="block py-2 px-4 text-sm text-slate-100 hover:text-slate-300">User integrations</a>
                                 <a href="/logout" class="block py-2 px-4 text-sm text-slate-100 hover:text-slate-300">Sign out</a>
                             </div>
                         </div>

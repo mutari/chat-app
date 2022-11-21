@@ -108,6 +108,28 @@ Route::group(['middleware' => ['auth']], function () {
 
     });
 
+    Route::prefix('config')->group(function() {
+
+        Route::controller(\App\Http\Controllers\ConfigController::class)->group(function() {
+
+            Route::get('user-integration', 'userIntegration');
+            Route::post('set-user-integration', 'setUserIntegration');
+
+        });
+
+    });
+
+    Route::prefix('test')->group(function() {
+
+        Route::controller(\App\Http\Controllers\TestController::class)->group(function() {
+
+            Route::get('/links', 'notion');
+
+        });
+
+    });
+
+
     Route::prefix('link')->group(function () {
 
         Route::controller(\App\Http\Controllers\LinkController::class)->group(function () {

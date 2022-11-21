@@ -9,16 +9,18 @@ class input extends Component
 
     public string $name;
     public string $id;
+    public bool $noMargin;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $id = '')
+    public function __construct($name, $noMargin = false, $id = '')
     {
         $this->name = $name;
         $this->id = $id;
+        $this->noMargin = $noMargin;
     }
 
     /**
