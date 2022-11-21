@@ -33,17 +33,21 @@ Route::group(['middleware' => ['guest']], function() {
         Route::get('/login', 'show')->name('login');
         Route::post('/login', 'login')->name('login.perform');
     });
-    
-});
 
-Route::prefix('test')->group(function() {
-    
-    Route::controller(\App\Http\Controllers\TestController::class)->group(function() {
-        
-        Route::get('/', 'index');
-        
+    Route::prefix('test')->group(function() {
+
+        Route::controller(\App\Http\Controllers\TestController::class)->group(function() {
+
+            Route::get('/', 'index');
+
+            Route::get('phpinfo', function () {
+                phpinfo();
+            })->name('phpinfo');
+
+        });
+
     });
-    
+
 });
 
 Route::group(['middleware' => ['auth']], function () {
@@ -59,7 +63,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::controller(\App\Http\Controllers\ChatController::class)->group(function () {
 
             Route::get('/', 'index');
-            
+
             Route::get('/get-users', 'getUsers');
 
         });
@@ -95,10 +99,23 @@ Route::group(['middleware' => ['auth']], function () {
 
             Route::get('/feeem', 'feeemMenu');
             Route::post('/create/game', 'createGame');
-            
+
             Route::get('/shots-hour', 'shotsHour');
+
+            Route::get('/cards', 'cards');
 
         });
 
     });
+
+    Route::prefix('link')->group(function () {
+
+        Route::controller(\App\Http\Controllers\LinkController::class)->group(function () {
+
+            Route::get('/', 'index');
+
+        });
+
+    });
+
 });

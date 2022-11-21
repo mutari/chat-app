@@ -10,6 +10,10 @@ class DrinkingController extends Controller {
         return view('drinking.index');
     }
 
+    public function cards() {
+        return view('drinking.cards.index');
+    }
+
     public function recipes() {
 
         $path = storage_path() . "/json/drinks.json";
@@ -35,7 +39,7 @@ class DrinkingController extends Controller {
 
         return view('drinking.recipe.recipe', ['drink' => $drinkData]);
     }
-    
+
     public function shotsHour() {
         return view('drinking.shotsHour.index');
     }

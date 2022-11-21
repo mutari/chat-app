@@ -13,4 +13,10 @@
         </div>
     </div>
 
+    <span>
+        <?php
+            phpinfo();
+        ?>
+    </span>
+
 @endsection

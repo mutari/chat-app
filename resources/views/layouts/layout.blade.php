@@ -10,6 +10,7 @@
         <link href="/css/app.css" rel="stylesheet">
         <script src="/js/tools.js"></script>
         <script src="/js/script.js"></script>
+        @yield('head')
     </head>
     <body class="bg-slate-900 text-slate-50 h-screen">
         <nav class="bg-transparent border-gray-200 px-2 py-2.5 rounded fixed top-0 left-0 right-0">
