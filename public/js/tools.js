@@ -8,6 +8,28 @@ window.fetch = (url, settings = {}) => {
     return oldFetch(url, settings);
 }
 
+async function loadHtml(element, url, clearElement = false) {
+    let html = await fetchHtml(url);
+    let htmlElement = htmlToElement(html);
+
+    if(clearElement)
+        element.innerHTML = "";
+
+    element.append(htmlElement);
+}
+
+/**
+ *
+ * @param {String} html
+ * @returns {ChildNode}
+ */
+function htmlToElement(html) {
+    let template = document.createElement('template');
+    html = html.trim(); // Never return a text node of whitespace as the result
+    template.innerHTML = html;
+    return template.content.firstChild;
+}
+
 /**
  * fetch html from
  *

@@ -3,19 +3,37 @@
 @section('content')
     <!-- icons from https://heroicons.com/-->
     <div class="w-full h-full flex justify-center items-center">
-        <div id="apps" class="flex flex-row">
-            @guest
-                <x-app icon="map" href="http://test.mutariproject.com/index.php">Map</x-app>
-                <x-app icon="exclamationTriangle" href="/test">Experiments</x-app>
-            @endguest
-            @auth
-                <x-app icon="map" href="http://test.mutariproject.com/index.php">Map</x-app>
-                <x-app icon="bord" href="/post">Posts</x-app>
-                <x-app icon="chatBubble" href="/chat">Chat</x-app>
-                <x-app icon="glass" href="/drinking">Drinking</x-app>
-                <x-app icon="link" href="/test/links">Links</x-app>
-                <x-app icon="exclamationTriangle" href="/test">Experiments</x-app>
-            @endauth
+
+        <div id="schema" class="grid grid-cols-10 grid-rows-4 gap-4">
+
+            @foreach($schema as $data)
+
+                <div id="schema_{{ $data['title'] }}"
+                     class="p-4
+                     {{ $data['col'] ? 'col-span-'.$data['col'] : '' }}
+                     {{ $data['row'] ? 'row-span-'.$data['row'] : '' }}"
+                     data-url="{{ $data['url'] }}">
+                    <div class="text-center">
+                        <h4 class="text-2xl m-4">{{ $data['title'] }}</h4>
+                    </div>
+                    <div class="content border border-gray-100 rounded p-4">
+
+                    </div>
+                </div>
+
+            @endforeach
+
         </div>
+
+        <script>
+
+            onReady(() => {
+                document.querySelectorAll('#schema [id^="schema_"]').forEach(element => {
+                    let url = element.dataset.url;
+                    loadHtml(element.querySelector('.content'), url);
+                });
+            });
+
+        </script>
     </div>
 @endsection

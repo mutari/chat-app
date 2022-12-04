@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+Route::controller(\App\Http\Controllers\IndexController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/index/apps', 'apps');
+    Route::get('/index/test', 'test');
 });
 
 Route::group(['middleware' => ['guest']], function() {
@@ -103,6 +105,16 @@ Route::group(['middleware' => ['auth']], function () {
             Route::get('/shots-hour', 'shotsHour');
 
             Route::get('/cards', 'cards');
+
+        });
+
+    });
+
+    Route::prefix('spotify')->group(function() {
+
+        Route::controller(\App\Http\Controllers\SpotifyController::class)->group(function() {
+
+            Route::get('/', 'index');
 
         });
 
