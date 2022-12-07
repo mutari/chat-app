@@ -7,9 +7,13 @@ module.exports = {
         "./resources/**/*.vue",
     ],
     theme: {
+        fontFamily: {
+            'montserrat': ['Montserrat', 'sans-serif']
+        },
         extend: {},
     },
     plugins: [
-        require('flowbite/plugin')
+        require('flowbite/plugin'),
+        require('@tailwindcss/line-clamp')
     ],
 }

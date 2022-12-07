@@ -4,8 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class input extends Component
-{
+class input extends Component {
 
     public string $name;
     public string $id;
@@ -16,8 +15,7 @@ class input extends Component
      *
      * @return void
      */
-    public function __construct($name, $noMargin = false, $id = '')
-    {
+    public function __construct($name, $noMargin = false, $id = '') {
         $this->name = $name;
         $this->id = $id;
         $this->noMargin = $noMargin;
