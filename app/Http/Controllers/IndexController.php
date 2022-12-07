@@ -14,22 +14,28 @@ class IndexController extends Controller {
 
         $schema = [];
 
-        if($user) {
+        if($user)
             $schema = [
                 [
                     'title' => 'apps',
                     'col' => 3,
                     'row' => 3,
+                    'start-col' => 5,
+                    'start-row' => 2,
                     'url' => '/index/apps'
-                ],
-                [
-                    'title' => 'test',
-                    'col' => 1,
-                    'row' => 1,
-                    'url' => '/index/test'
                 ]
             ];
-        }
+        else
+            $schema = [
+                [
+                    'title' => 'apps',
+                    'col' => 3,
+                    'row' => 3,
+                    'start-col' => 5,
+                    'start-row' => 2,
+                    'url' => '/index/apps'
+                ]
+            ];
 
         return view('index', ['schema' => $schema]);
     }
