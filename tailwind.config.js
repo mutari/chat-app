@@ -10,7 +10,11 @@ module.exports = {
         fontFamily: {
             'montserrat': ['Montserrat', 'sans-serif']
         },
-        extend: {},
+        extend: {
+            boxShadow: {
+                'top-left': '5px 5px 10px rgb(25, 25, 25), -5px -5px 10px rgb(60, 60, 60)',
+            }
+        },
     },
     plugins: [
         require('flowbite/plugin'),

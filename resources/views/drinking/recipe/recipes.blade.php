@@ -5,7 +5,7 @@
     <div class="grid grid-cols-1 xl:grid-cols-2 gap-2 font-montserrat">
         @foreach ($drinks as $drink)
 
-            <div class="flex flex-row bg-black rounded-lg shadow-lg">
+            <div class="flex flex-row bg-zinc-900 rounded-lg shadow-2xl">
                 <div class="w-2/5 overflow">
                     <img src="{{ $drink['image'] }}" alt="{{ $drink['name'] }}" class="w-full rounded-l-lg" loading="lazy" height="200" width="200">
                 </div>
@@ -29,26 +29,6 @@
                     </div>
                 </div>
             </div>
-
-        <!--
-            <div class="border border-slate-500 rounded hover:scale-110 bg-slate-900">
-                <a class="" href="/drinking/recipe/{{ $drink['id'] }}">
-                    <div class="flex flex-row">
-                        <div class="shrink-0 w-48">
-                            <img src="{{ $drink['image'] }}" alt="{{ $drink['name'] }}" class="rounded" loading="lazy" height="200" width="200">
-                        </div>
-                        <div class="grow">
-                            <div class="h-full p-2">
-                                <div class="relative h-full">
-                                    <h5 class="">{{ $drink['name'] }}</h5>
-                                    <p class="absolute bottom-0 right-0"><small class="text-muted">3 min</small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-         -->
 
         @endforeach
     </div>

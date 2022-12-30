@@ -12,7 +12,7 @@
         <script src="/js/script.js"></script>
         @yield('head')
     </head>
-    <body class="bg-slate-900 text-slate-50 h-screen">
+    <body class="bg-zinc-900 text-slate-50 h-screen">
         <nav class="bg-transparent border-gray-200 px-2 py-2.5 rounded fixed top-0 left-0 right-0">
             <div class="container flex flex-wrap justify-between items-center mx-auto">
                 <a href="/" class="text-slate-400 font-medium">MutariProject.com</a>

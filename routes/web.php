@@ -17,6 +17,17 @@ Route::controller(\App\Http\Controllers\IndexController::class)->group(function 
     Route::get('/', 'index');
     Route::get('/index/apps', 'apps');
     Route::get('/index/test', 'test');
+
+    Route::prefix('drinking')->group(function () {
+
+        Route::controller(\App\Http\Controllers\DrinkingController::class)->group(function () {
+
+            Route::get('/recipes', 'recipes');
+            Route::get('/recipe/{id}', 'recipe');
+
+        });
+
+    });
 });
 
 Route::group(['middleware' => ['guest']], function() {
@@ -95,9 +106,6 @@ Route::group(['middleware' => ['auth']], function () {
         Route::controller(\App\Http\Controllers\DrinkingController::class)->group(function () {
 
             Route::get('/', 'index');
-
-            Route::get('/recipes', 'recipes');
-            Route::get('/recipe/{id}', 'recipe');
 
             Route::get('/feeem', 'feeemMenu');
             Route::post('/create/game', 'createGame');
