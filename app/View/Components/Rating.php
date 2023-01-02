@@ -4,21 +4,18 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class input extends Component {
+class Rating extends Component
+{
 
-    public string $name;
-    public string $id;
-    public bool $noMargin;
+    public array $stars = [];
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $noMargin = false, $id = '') {
-        $this->name = $name;
-        $this->id = $id;
-        $this->noMargin = $noMargin;
+    public function __construct($stars) {
+        $this->stars = explode(',', $stars);
     }
 
     /**
@@ -28,6 +25,6 @@ class input extends Component {
      */
     public function render()
     {
-        return view('components.input');
+        return view('components.rating');
     }
 }

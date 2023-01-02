@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class app extends Component
+class App extends Component
 {
 
     public string $icon;

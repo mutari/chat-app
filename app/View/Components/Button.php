@@ -4,20 +4,19 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class textarea extends Component
+class Button extends Component
 {
-    public string $name;
-    public string $id;
+
+    public string $type;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $id = '')
+    public function __construct($type = 'button')
     {
-        $this->name = $name;
-        $this->id = $id;
+        $this->type = $type;
     }
 
     /**
@@ -27,6 +26,6 @@ class textarea extends Component
      */
     public function render()
     {
-        return view('components.textarea');
+        return view('components.button');
     }
 }
